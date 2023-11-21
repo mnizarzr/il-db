@@ -3,26 +3,27 @@ schema "il_db" {}
 table "visitors" {
   schema = schema.il_db
   column "id" {
-    type = bigint
+    type           = bigint
+    auto_increment = true
   }
   column "name" {
-    type   = varchar(255)
+    type = varchar(255)
   }
   column "email" {
-    type   = varchar(255)
+    type = varchar(255)
   }
   column "phone_number" {
-    type   = varchar(255)
+    type = varchar(255)
   }
   primary_key {
     columns = [column.id]
   }
   index "idx_email" {
-    unique = true
+    unique  = true
     columns = [column.email]
   }
   index "idx_phone" {
-    unique = true
+    unique  = true
     columns = [column.phone_number]
   }
 }
@@ -30,7 +31,8 @@ table "visitors" {
 table "schedules" {
   schema = schema.il_db
   column "id" {
-    type = bigint
+    type           = bigint
+    auto_increment = true
   }
   column "start_date" {
     type = date
@@ -49,7 +51,8 @@ table "schedules" {
 table "visits" {
   schema = schema.il_db
   column "id" {
-    type = bigint
+    type           = bigint
+    auto_increment = true
   }
   column "visitor_id" {
     type = bigint
